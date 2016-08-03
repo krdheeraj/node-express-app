@@ -2,6 +2,8 @@
 
 A multi-page application using NodeJS, Express, jQuery, Bootstrap, AngularJS, D3, HTML5 (Jade), and CSS3 (SASS), where D3 does faster DOM manipulation than any other frameworks or libraries.
 
+![https://github.com/shorifali/node-express-app](https://raw.githubusercontent.com/shorifali/node-express-app/master/node-express-app.png)
+
 
 ## Download
 

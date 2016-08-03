@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.main {
+  background-color: #fff;
+  min-height: calc(100% - 100px);
+}
+
+@import "modules/module";

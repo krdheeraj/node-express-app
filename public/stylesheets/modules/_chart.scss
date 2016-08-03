@@ -1,0 +1,28 @@
+.chart-content {
+  .chart-wrapper {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+
+    .chart {
+      .rect {
+        &:hover {
+          fill: brown;
+          cursor: pointer;
+        }
+      }
+
+      .axis {
+        font: 10px sans-serif;
+
+        path,
+        line {
+          fill: none;
+          stroke: #000;
+          stroke-width: 1;
+          shape-rendering: crispEdges;
+        }
+      }
+    }
+  }
+}

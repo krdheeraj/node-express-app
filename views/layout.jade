@@ -1,0 +1,33 @@
+doctype html
+html(lang="en", dir="ltr", ng-app="nodeApp")
+    head
+        meta(charset="utf-8")
+        title NodeJS App : #{ title }
+        meta(name="description", content="")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+    body(class="data-ng-cloak")
+        header(class="header")
+            include ./header.jade
+
+        main(class="main container-fluid", ng-controller="#{ controller }")
+            block content
+
+        footer(class="footer")
+            include ./footer.jade
+
+        script(type="text/javascript", src="/javascripts/vendor/jquery/dist/jquery.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/bootstrap-sass-official/assets/javascripts/bootstrap.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular/angular.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-animate/angular-animate.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-aria/angular-aria.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-bootstrap/ui-bootstrap.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-cookies/angular-cookies.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-touch/angular-touch.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/angular-resource/angular-resource.min.js")
+        script(type="text/javascript", src="/javascripts/vendor/d3/d3.min.js")
+        script(type="text/javascript", src="/javascripts/modules/app.js")
+
+        block scripts

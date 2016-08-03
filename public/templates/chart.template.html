@@ -1,0 +1,12 @@
+<div class="chart-container" id="chart"></div>
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <select class="form-control" ng-model="dirCtrl.chartSet" ng-change="dirCtrl.changeSet()">
+                <option ng-repeat="set in dirCtrl.chartSets" value="{{$index}}")> {{set}}</option>
+            </select>
+            <span>Change data set for new chart</span>
+        </div>
+    </div>
+</div>

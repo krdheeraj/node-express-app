@@ -1,0 +1,26 @@
+.table-content {
+  .table-wrapper {
+    .table {
+      tr {
+        th {
+          text-transform: capitalize;
+
+          .sort {
+            color: #eee;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            .sort {
+              color: #555;
+            }
+          }
+        }
+        td {
+
+        }
+      }
+    }
+  }
+}

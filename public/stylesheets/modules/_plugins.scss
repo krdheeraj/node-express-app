@@ -1,0 +1,25 @@
+a:focus,
+button:focus,
+input[type="submit"],
+input[type="search"],
+select,
+input[type="radio"],
+input[type="checkbox"] {
+  outline: 0 none;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="search"],
+select {
+  cursor: pointer;
+}
+
+.select-wrapper {
+  width: 210px;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}

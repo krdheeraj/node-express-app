@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    section(class="chart-content")
+        h3 #{ title }
+        div(class="chart-wrapper", ng-show="chartCtrl.showChart")
+            node-chart(class="node-chart")
+
+block scripts
+    script(type="text/javascript", src="/javascripts/modules/chart.controller.js")
+    script(type="text/javascript", src="/javascripts/modules/chart.directive.js")

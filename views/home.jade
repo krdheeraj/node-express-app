@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    section(class="home-content")
+        div(class="home-wrapper", ng-show="homeCtrl.showContent")
+            div(class="row")
+                div(class="col-md-6 col-md-offset-3")
+                    br
+                    br
+                    h1(class="text-center")
+                        span A Traditional Multi-Page Application
+                        br
+                        br
+                        span(style="color: brown") Using
+                        br
+                        br
+                        span NodeJS, Express, AngularJS, Bootstrap, jQuery, Jade, SASS, and D3
+                    br
+                    h1(class="text-center")
+                        a(href="/table", class="link") Table (With Pagination)
+                        br
+                        br
+                        a(href="/chart", class="link") Chart (With Multiple Data Set)
+
+block scripts
+    script(type="text/javascript", src="/javascripts/modules/home.controller.js")

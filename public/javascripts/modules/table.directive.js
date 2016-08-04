@@ -95,7 +95,7 @@
               id: index,
               name: 'Lorem Ipsum-' + index,
               gender: gender[random(0, gender.length - 1)],
-              age: random(18, 60),
+              age: random(23, 32),
               country: country[random(0, country.length - 1)],
               status: status[random(0, status.length - 1)],
               experience: experience[random(0, experience.length - 1)],

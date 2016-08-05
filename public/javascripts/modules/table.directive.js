@@ -37,9 +37,7 @@
               if(that.attr('data-sort-direction') === 'asc') {
                 all.attr('data-sort-direction', 'dsc');
                 htmlTable.selectAll('tbody tr').sort(function(a, b) {
-                  if(toLowerCase(a[col]) > toLowerCase(b[col])) return -1;
-                  if (toLowerCase(a[col]) < toLowerCase(b[col])) return 1;
-                  return 0;
+                  return (toLowerCase(a[col]) > toLowerCase(b[col])) ? -1 : (toLowerCase(a[col]) < toLowerCase(b[col])) ? 1 : 0;
                 });
                 all.selectAll('i').attr('class', 'glyphicon glyphicon-chevron-up');
                 that.attr('data-sort-direction', 'dsc');
@@ -48,9 +46,7 @@
               else {
                 all.attr('data-sort-direction', 'dsc');
                 htmlTable.selectAll('tbody tr').sort(function(a, b) {
-                  if(toLowerCase(a[col]) > toLowerCase(b[col])) return 1;
-                  if (toLowerCase(a[col]) < toLowerCase(b[col])) return -1;
-                  return 0;
+                  return (toLowerCase(a[col]) > toLowerCase(b[col])) ? 1 : (toLowerCase(a[col]) < toLowerCase(b[col])) ? -1 : 0;
                 });
                 all.selectAll('i').attr('class', 'glyphicon glyphicon-chevron-up');
                 that.attr('data-sort-direction', 'asc');
@@ -106,11 +102,11 @@
         };
 
         var callPopulate = function () {
-          var pageSize = parseInt(tableCtrl.pageSize, 10), pageNumber = parseInt(tableCtrl.pageNumber, 10), data = makeData.call(this, pageSize, pageNumber);
+          var pageSize = parseInt(tableCtrl.pageSize, 10), pageNumber = parseInt(tableCtrl.pageNumber, 10), data = makeData(pageSize, pageNumber);
           data.data.sort(function (a, b) {
             return d3.ascending(a.id, b.id);
           });
-          htmlTable = tabulate.call(this, data.headers, data.data);
+          htmlTable = tabulate(data.headers, data.data);
           var selector = d3.select('th[data-sort-direction]:first-child');
           selector.attr('data-sort-direction', 'asc');
           selector.select('i').attr('class', 'glyphicon glyphicon-chevron-down');
@@ -123,7 +119,11 @@
       };
     };
 
-    return { link: linkFn.call(this, $window.d3), restrict: 'E', scope: false };
+    return {
+      link: linkFn($window.d3),
+      restrict: 'E',
+      scope: false
+    };
   });
 
 })();

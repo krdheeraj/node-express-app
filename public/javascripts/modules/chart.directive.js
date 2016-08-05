@@ -132,9 +132,9 @@
       restrict: 'E',
       scope: true,
       templateUrl: '/templates/chart.template.html',
-      controller: ctrlFn.call(this),
+      controller: ctrlFn(),
       controllerAs: 'dirCtrl',
-      link: linkFn.call(this, $window.d3)
+      link: linkFn($window.d3)
     };
 
   });

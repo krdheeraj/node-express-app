@@ -35,13 +35,6 @@ After installation, execute one of the below command (make sure that port 3000 i
 
 ```
 
-$ node ./bin/www
-
-```
-or
-
-```
-
 $ npm start
 
 ```

@@ -31,7 +31,7 @@ $ npm install && bower install
 
 ## Execution
 
-After installation, execute one of the below command (make sure that port 3000 is not in use), and then navigate your browser to http://localhost:3000
+After installation, execute the below command (make sure that port 3000 is not in use), and then navigate your browser to http://localhost:3000
 
 ```
 

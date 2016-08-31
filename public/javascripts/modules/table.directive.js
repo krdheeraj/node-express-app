@@ -2,12 +2,14 @@
 
   'use strict';
 
-  nodeApp.directive('nodeTable', function($window, $rootScope) {
-    var linkFn = function(d3) {
-      return function(scope, element, attrs) {
+  nodeApp.directive('nodeTable', function ($window, $rootScope) {
+    var linkFn = function (d3) {
+      return function (scope, element, attrs) {
+        if (!attrs) return;
+
         var htmlTable = {}, tableCtrl = scope.tableCtrl;
 
-        var toLowerCase = function(str) {
+        var toLowerCase = function (str) {
           return (typeof str === 'string') ? str.toLowerCase() : str;
         };
 
@@ -15,7 +17,7 @@
           return Math.floor((Math.random() * (max - min + 1)) + min);
         };
 
-        var tabulate = function(headers, data) {
+        var tabulate = function (headers, data) {
           jQuery(element[0]).find('table').remove();
           var table = d3.select(element[0])
             .append('table')
@@ -28,15 +30,15 @@
             .append('th')
             .attr('data-sort-direction', 'dsc')
             .attr('class', 'table-header')
-            .text(function(col) {
+            .text(function (col) {
               return col;
             })
-            .on('click', function(col) {
+            .on('click', function (col) {
               var that = d3.select(this), all = d3.selectAll('th[data-sort-direction="asc"]');
               jQuery(this).find('>.sort').trigger('focus');
-              if(that.attr('data-sort-direction') === 'asc') {
+              if (that.attr('data-sort-direction') === 'asc') {
                 all.attr('data-sort-direction', 'dsc');
-                htmlTable.selectAll('tbody tr').sort(function(a, b) {
+                htmlTable.selectAll('tbody tr').sort(function (a, b) {
                   return (toLowerCase(a[col]) > toLowerCase(b[col])) ? -1 : (toLowerCase(a[col]) < toLowerCase(b[col])) ? 1 : 0;
                 });
                 all.selectAll('i').attr('class', 'glyphicon glyphicon-chevron-up');
@@ -45,7 +47,7 @@
               }
               else {
                 all.attr('data-sort-direction', 'dsc');
-                htmlTable.selectAll('tbody tr').sort(function(a, b) {
+                htmlTable.selectAll('tbody tr').sort(function (a, b) {
                   return (toLowerCase(a[col]) > toLowerCase(b[col])) ? 1 : (toLowerCase(a[col]) < toLowerCase(b[col])) ? -1 : 0;
                 });
                 all.selectAll('i').attr('class', 'glyphicon glyphicon-chevron-up');
@@ -63,17 +65,17 @@
             .enter()
             .append('tr')
             .selectAll('td')
-            .data(function(row) {
-              return headers.map(function(col) {
+            .data(function (row) {
+              return headers.map(function (col) {
                 return { column: col, value: row[col] };
               });
             })
             .enter()
             .append('td')
-            .attr('class', function(cell) {
+            .attr('class', function (cell) {
               return cell.column;
             })
-            .text(function(cell) {
+            .text(function (cell) {
               return cell.value;
             });
           return table;
@@ -84,7 +86,7 @@
             obj = { headers: ['id', 'name', 'gender', 'age', 'status', 'country', 'profession', 'experience'], data: []},
             country = ['India', 'USA', 'Canada', 'UAE', 'Australia', 'UK', 'Switzerland'],
             status = ['Married', 'Single', 'Divorcee'],
-            experience = ['Novice', 'Ninja' ,'Intermediate'],
+            experience = ['Novice', 'Ninja' , 'Intermediate'],
             gender = ['Male', 'Female', 'Gay', 'Lesbian'];
           for (var index = rowCount - pageSize | 1; index <= rowCount; index++) {
             obj.data.push({

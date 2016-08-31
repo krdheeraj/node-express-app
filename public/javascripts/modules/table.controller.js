@@ -7,7 +7,7 @@
     tableCtrl.showTable = true;
     tableCtrl.pageSize = '50';
     tableCtrl.pageNumber = '1';
-    tableCtrl.changeValue = function() {
+    tableCtrl.changeValue = function () {
       $rootScope.$emit('changeValue');
     };
   });

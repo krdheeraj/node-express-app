@@ -1,0 +1,11 @@
+/public/javascripts/vendor/
+/node_modules/
+/wiki/
+/src/
+.DS_Store
+/.idea/
+/.idea
+.jscsrc
+.jshintignore
+.jshintrc
+.gitattributes

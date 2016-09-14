@@ -22,6 +22,38 @@ block content
                         option(value="5") 5
         div(class="table-wrapper", ng-show="tableCtrl.showTable")
             node-table(class="node-table")
+        script(id="popup", type="template")
+            tr(class="table-popup", ng-cloak="ng-cloak")
+                td(colspan="8")
+                    table(class="table table-responsive")
+                        tbody(class="table-body")
+                            tr(class="table-row")
+                                td(class="table-col")
+                                    span(class="popup-label") ID:&nbsp;
+                                    {{tableCtrl.popupData.id}}
+                                td(class="table-col")
+                                    span(class="popup-label") Name:&nbsp;
+                                    {{tableCtrl.popupData.name}}
+                                td(class="table-col")
+                                    span(class="popup-label") Country:&nbsp;
+                                    {{tableCtrl.popupData.country}}
+                                td(class="table-col")
+                                    span(class="popup-label") Experience:&nbsp;
+                                    {{tableCtrl.popupData.experience}}
+                                td(class="table-col")
+                                    span(class="popup-label") Gender:&nbsp;
+                                    {{tableCtrl.popupData.gender}}
+                                td(class="table-col")
+                                    span(class="popup-label") Age:&nbsp;
+                                    {{tableCtrl.popupData.age}}
+                                td(class="table-col")
+                                    span(class="popup-label") Profession:&nbsp;
+                                    {{tableCtrl.popupData.profession}}
+                                td(class="table-col")
+                                    span(class="popup-label") Status:&nbsp;
+                                    {{tableCtrl.popupData.status}}
+                    span(class="btn-close pull-right", ng-click="tableCtrl.closePopup()")
+                        i(class="glyphicon glyphicon-remove")
 
 block scripts
     script(type="text/javascript", src="/javascripts/modules/table.controller.js")

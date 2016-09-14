@@ -2,7 +2,7 @@
 
   'use strict';
 
-  nodeApp.directive('nodeTable', function ($window, $rootScope) {
+  nodeApp.directive('nodeTable', function ($window, $rootScope, $compile) {
     var linkFn = function (d3) {
       return function (scope, element, attrs) {
         if (!attrs) return;
@@ -16,6 +16,11 @@
         var random = function (min, max) {
           return Math.floor((Math.random() * (max - min + 1)) + min);
         };
+
+        $(window).on('resize', function () {
+          var width = $('.table-wrapper').width() + 'px';
+          $('.table-popup').css('width', width);
+        });
 
         var tabulate = function (headers, data) {
           jQuery(element[0]).find('table').remove();
@@ -34,6 +39,7 @@
               return col;
             })
             .on('click', function (col) {
+              $('.table-popup').remove();
               var that = d3.select(this), all = d3.selectAll('th[data-sort-direction="asc"]');
               jQuery(this).find('>.sort').trigger('focus');
               if (that.attr('data-sort-direction') === 'asc') {
@@ -64,6 +70,16 @@
             .data(data)
             .enter()
             .append('tr')
+            .attr('class', 'inactive')
+            .on('click', function (data) {
+              var event = d3.event;
+              $('.table-popup').remove();
+              $(this).after($compile($('#popup').html())(scope));
+              d3.select('tr.active').attr('class', 'inactive');
+              d3.select(this).attr('class', 'active');
+              tableCtrl.popupData = data;
+              $rootScope.$apply(tableCtrl);
+            })
             .selectAll('td')
             .data(function (row) {
               return headers.map(function (col) {

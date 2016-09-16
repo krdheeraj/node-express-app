@@ -198,54 +198,12 @@
           var radius = height / 2;
           var color = d3.scale.category20b();
 
-          var x = d3.scale.ordinal()
-            .rangeRoundBands([0, width]);
-          var y = d3.scale.linear()
-            .range([height, 0]);
-
-          var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient('bottom');
-          var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient('left');
-
           var chart = d3.detach('svg')
             .select(wrapper)
             .append('svg')
             .attr('class', 'chart')
             .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
-            .append('g')
-            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-          x.domain(data.map(function (d) {
-            return d.label;
-          }));
-          y.domain([0, d3.max(data, function (d) {
-            return d.value;
-          })]);
-
-          chart.append('g')
-            .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + height + ')')
-            .call(xAxis)
-            .append('text')
-            .attr('y', margin.top)
-            .attr('x', width)
-            .attr('dx', '.70em')
-            .style('text-anchor', 'end')
-            .text('Alphabets');
-
-          chart.append('g')
-            .attr('class', 'y axis')
-            .call(yAxis)
-            .append('text')
-            .attr('transform', 'rotate(-90)')
-            .attr('y', -(margin.left * 2 / 3))
-            .attr('dy', '.70em')
-            .style('text-anchor', 'end')
-            .text('Frequency');
+            .attr('height', height + margin.top + margin.bottom);
 
           var arc = d3.svg.arc()
             .innerRadius(0)
@@ -258,7 +216,7 @@
             .sort(null);
 
           var path = chart.append('g')
-            .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2 - 15) + ')')
+            .attr('transform', 'translate(' + (width / 2) + ',' + ((height / 2) + 40) + ')')
             .selectAll('path')
             .data(pie(data))
             .enter()

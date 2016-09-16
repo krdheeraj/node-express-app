@@ -17,11 +17,6 @@
           return Math.floor((Math.random() * (max - min + 1)) + min);
         };
 
-        $(window).on('resize', function () {
-          var width = $('.table-wrapper').width() + 'px';
-          $('.table-popup').css('width', width);
-        });
-
         var tabulate = function (headers, data) {
           jQuery(element[0]).find('table').remove();
           var table = d3.select(element[0])

@@ -13,7 +13,7 @@
         dirCtrl.chartType = '0';
 
         dirCtrl.makeData = function () {
-          var data = [], alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+          var data = [], alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T'];
           var random = function () {
             return Math.floor(Math.random() * 100) + 1;
           };
@@ -195,15 +195,18 @@
         };
 
         var drawPieChart = function (data, margin, width, height) {
-          var radius = height / 2;
+          var w = width + margin.left + margin.right;
+          var h = height + margin.top + margin.bottom;
+          var radius = (height <= width) ? (height / 2) : (width / 2);
           var color = d3.scale.category20b();
 
           var chart = d3.detach('svg')
             .select(wrapper)
             .append('svg')
             .attr('class', 'chart')
-            .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom);
+            .attr('width', w)
+            .attr('height', h)
+            .attr('preserveAspectRatio', 'xMidYMid meet');
 
           var arc = d3.svg.arc()
             .innerRadius(0)
@@ -216,7 +219,7 @@
             .sort(null);
 
           var path = chart.append('g')
-            .attr('transform', 'translate(' + (width / 2) + ',' + ((height / 2) + 40) + ')')
+            .attr('transform', 'translate(' + (w / 2) + ',' + (h / 2) + ')')
             .selectAll('path')
             .data(pie(data))
             .enter()
@@ -322,6 +325,11 @@
         $rootScope.$on('changeChart', function () {
           drawChart.call(this);
         });
+
+        angular.element(window).on('resize', function () {
+          drawChart.call(this);
+        });
+
         drawChart.call(this);
       }
     };

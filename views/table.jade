@@ -2,24 +2,22 @@ extends layout
 
 block content
     section(class="table-content")
-        h3(class="clearfix")
+        h3(class="pull-left")
             span(class="pull-left") #{ title }
-            div(class="pull-right select-wrapper")
-                div(class="form-group col-md-6")
-                    select(class="form-control", ng-model="tableCtrl.pageSize", ng-change="tableCtrl.changeValue()")
-                        option(value="50") 50
-                        option(value="100") 100
-                        option(value="200") 200
-                        option(value="300") 300
-                        option(value="400") 400
-                        option(value="500") 500
-                div(class="form-group col-md-6")
-                    select(class="form-control", ng-model="tableCtrl.pageNumber", ng-change="tableCtrl.changeValue()")
-                        option(value="1") 1
-                        option(value="2") 2
-                        option(value="3") 3
-                        option(value="4") 4
-                        option(value="5") 5
+        div(class="pull-right select-wrapper clearfix")
+            select(class="selector", ng-model="tableCtrl.pageSize", ng-change="tableCtrl.changeValue()")
+                option(value="50") 50
+                option(value="100") 100
+                option(value="200") 200
+                option(value="300") 300
+                option(value="400") 400
+                option(value="500") 500
+            select(class="selector", ng-model="tableCtrl.pageNumber", ng-change="tableCtrl.changeValue()")
+                option(value="1") 1
+                option(value="2") 2
+                option(value="3") 3
+                option(value="4") 4
+                option(value="5") 5
         div(class="table-wrapper", ng-show="tableCtrl.showTable")
             node-table(class="node-table")
         script(id="popup", type="template")

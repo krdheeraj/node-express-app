@@ -205,8 +205,7 @@
             .append('svg')
             .attr('class', 'chart')
             .attr('width', w)
-            .attr('height', h)
-            .attr('preserveAspectRatio', 'xMidYMid meet');
+            .attr('height', h);
 
           var arc = d3.svg.arc()
             .innerRadius(0)

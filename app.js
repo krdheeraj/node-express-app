@@ -28,6 +28,6 @@ app.use(require('node-sass-middleware')({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-if (app.get('runApp')) require('./routes/router.js')(app);
+if (app.get('runApp')) require('./routes/router.js');
 
 module.exports = app;

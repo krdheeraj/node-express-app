@@ -1,6 +1,6 @@
 # Multi-Page Application Using NodeJS
 
-A multi-page application using NodeJS, Express, jQuery, Bootstrap, AngularJS, D3, HTML5 (Jade), and CSS3 (SASS), where D3 does faster DOM manipulation than any other frameworks or libraries.
+A multi-page application using NodeJS, Express, jQuery, Bootstrap, AngularJS, D3, HTML5 (Jade), and CSS3 (SASS), where D3 does faster DOM manipulation than any other frameworks or libraries we have today.
 
 ##### Chart using D3
 ![https://github.com/shorifali/node-express-app](https://raw.githubusercontent.com/shorifali/node-express-app/master/node-express-app-chart.png)
@@ -21,7 +21,7 @@ $ git clone https://github.com/shorifali/node-express-app.git
 
 ## Installation
 
-Navigate to the folder where downloaded and do `npm install` followed by `bower install` or the below command.
+Navigate to the folder where it was downloaded and do `npm install` followed by `bower install`.
 
 ```
 
@@ -35,7 +35,7 @@ After installation, execute the below command (make sure that port 3000 is not i
 
 ```
 
-$ npm start
+$ npm run start
 
 ```
 

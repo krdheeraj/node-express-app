@@ -19,7 +19,7 @@ $ git clone https://github.com/shorifali/node-express-app.git
 ```
 
 
-## Installation
+## Setup
 
 Navigate to the folder where it was downloaded and do `npm install` followed by `bower install`.
 

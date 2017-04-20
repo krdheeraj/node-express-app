@@ -12,7 +12,7 @@ A multi-page application using NodeJS, Express, jQuery, Bootstrap, AngularJS, D3
 
 Get the repository [here (zip)](https://github.com/shorifali/node-express-app/archive/master.zip) or execute the below command inside a folder.
 
-```
+```sh
 
 $ git clone https://github.com/shorifali/node-express-app.git
 
@@ -23,7 +23,7 @@ $ git clone https://github.com/shorifali/node-express-app.git
 
 Navigate to the folder where it was downloaded and do `npm install` followed by `bower install`.
 
-```
+```sh
 
 $ npm install && bower install
 
@@ -33,7 +33,7 @@ $ npm install && bower install
 
 After installation, execute the below command (make sure that port 3000 is not in use), and then navigate your browser to http://localhost:3000
 
-```
+```sh
 
 $ npm run start
 

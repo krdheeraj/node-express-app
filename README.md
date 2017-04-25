@@ -19,7 +19,7 @@ $ git clone https://github.com/shorifali/node-express-app.git
 
 ## Setup
 
-Navigate to the folder where it was downloaded and do `npm install` followed by `bower install`.
+Navigate Git to that folder where it was downloaded and install all node package dependencies using `npm install` followed by `bower install`.
 
 ```
 $ npm install && bower install
@@ -27,11 +27,13 @@ $ npm install && bower install
 
 ## Execution
 
-After installation, execute the below command (make sure that port 3000 is not in use), and then navigate your browser to http://localhost:3000
+After node packages are installed, execute the below command (make sure that port 3000 is not in use and also you can change it accordingly). 
 
 ```
 $ npm run start
 ```
+
+If there is no internal issues in the system and in the node packages installed, the web browser opens automatically and points to [](http://localhost:3000).
 
 # License ([MIT](https://opensource.org/licenses/MIT))
 

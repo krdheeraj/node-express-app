@@ -5,14 +5,14 @@ block content
         h3(class="pull-left")
             span(class="pull-left") #{ title }
         div(class="pull-right select-wrapper clearfix")
-            select(class="selector", ng-model="tableCtrl.pageSize", ng-change="tableCtrl.changeValue()")
+            select(class="form-control selector pull-left", ng-model="tableCtrl.pageSize", ng-change="tableCtrl.changeValue()")
                 option(value="50") 50
                 option(value="100") 100
                 option(value="200") 200
                 option(value="300") 300
                 option(value="400") 400
                 option(value="500") 500
-            select(class="selector", ng-model="tableCtrl.pageNumber", ng-change="tableCtrl.changeValue()")
+            select(class="form-control selector pull-right", ng-model="tableCtrl.pageNumber", ng-change="tableCtrl.changeValue()")
                 option(value="1") 1
                 option(value="2") 2
                 option(value="3") 3
@@ -26,30 +26,43 @@ block content
                     table(class="table table-responsive")
                         tbody(class="table-body")
                             tr(class="table-row")
-                                td(class="table-col")
-                                    span(class="popup-label") ID:&nbsp;
-                                    {{tableCtrl.popupData.id}}
-                                td(class="table-col")
-                                    span(class="popup-label") Name:&nbsp;
-                                    {{tableCtrl.popupData.name}}
-                                td(class="table-col")
-                                    span(class="popup-label") Country:&nbsp;
-                                    {{tableCtrl.popupData.country}}
-                                td(class="table-col")
-                                    span(class="popup-label") Experience:&nbsp;
-                                    {{tableCtrl.popupData.experience}}
-                                td(class="table-col")
-                                    span(class="popup-label") Gender:&nbsp;
-                                    {{tableCtrl.popupData.gender}}
-                                td(class="table-col")
-                                    span(class="popup-label") Age:&nbsp;
-                                    {{tableCtrl.popupData.age}}
-                                td(class="table-col")
-                                    span(class="popup-label") Profession:&nbsp;
-                                    {{tableCtrl.popupData.profession}}
-                                td(class="table-col")
-                                    span(class="popup-label") Status:&nbsp;
-                                    {{tableCtrl.popupData.status}}
+                                td(class="table-col" colspan="7")
+                                    div(class="wrapper")
+                                        span(class="popup-label") ID:&nbsp;
+                                        {{tableCtrl.popupData.id}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Name:&nbsp;
+                                        {{tableCtrl.popupData.name}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Gender:&nbsp;
+                                        {{tableCtrl.popupData.gender}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Age:&nbsp;
+                                        {{tableCtrl.popupData.age}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Status:&nbsp;
+                                        {{tableCtrl.popupData.status}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Nationality:&nbsp;
+                                        {{tableCtrl.popupData.nationality}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Profession:&nbsp;
+                                        {{tableCtrl.popupData.profession}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Experience:&nbsp;
+                                        {{tableCtrl.popupData.experience}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Qualification:&nbsp;
+                                        {{tableCtrl.popupData.qualification}}
+                                    div(class="wrapper")
+                                        span(class="popup-label") Work Location:&nbsp;
+                                        {{tableCtrl.popupData.location}}
+                            tr(class="table-row")
+                                td(class="table-col" colspan="7")
+                                    div(class="btn-group-wrapper")
+                                        div(class="btn-group")
+                                            button(class="btn btn-default" title="Edit") Edit
+                                            button(class="btn btn-default" title="Delete") Delete
                     span(class="btn-close pull-right", ng-click="tableCtrl.closePopup()")
                         i(class="glyphicon glyphicon-remove")
 

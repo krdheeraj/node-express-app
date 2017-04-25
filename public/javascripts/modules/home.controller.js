@@ -1,10 +1,10 @@
 (function () {
 
-  'use strict';
+	'use strict';
 
-  nodeApp.controller('homeController', function () {
-    var homeCtrl = this;
-    homeCtrl.showContent = true;
-  });
+	nodeApp.controller('homeController', function () {
+		var homeCtrl = this;
+		homeCtrl.showContent = true;
+	});
 
 })();

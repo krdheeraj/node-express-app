@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// Configure app object
+// Configuration object
 var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -18,12 +18,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: false,
-  debug: true,
-  outputStyle: 'compressed',
-  sourceMap: true
+  	src: path.join(__dirname, 'public'),
+  	dest: path.join(__dirname, 'public'),
+  	indentedSyntax: false,
+  	debug: true,
+  	outputStyle: 'compressed',
+  	sourceMap: true
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));

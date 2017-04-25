@@ -1,37 +1,37 @@
 .chart-content {
-  .chart-wrapper {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+    .chart-wrapper {
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
 
-    .chart {
-      .rect {
-        &:hover {
-          fill: brown;
-          cursor: pointer;
+        .chart {
+            .rect {
+                &:hover {
+                    fill: brown;
+                    cursor: pointer;
+                }
+            }
+
+            .line {
+                fill: none;
+                stroke: yellowgreen;
+            }
+
+            .area {
+                fill: yellowgreen;
+            }
+
+            .axis {
+                font: 10px sans-serif;
+
+                path,
+                line {
+                    fill: none;
+                    stroke: #000;
+                    stroke-width: 1;
+                    shape-rendering: crispEdges;
+                }
+            }
         }
-      }
-
-      .line {
-        fill: none;
-        stroke: yellowgreen;
-      }
-
-      .area {
-        fill: yellowgreen;
-      }
-
-      .axis {
-        font: 10px sans-serif;
-
-        path,
-        line {
-          fill: none;
-          stroke: #000;
-          stroke-width: 1;
-          shape-rendering: crispEdges;
-        }
-      }
     }
-  }
 }

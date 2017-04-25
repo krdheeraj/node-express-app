@@ -1,18 +1,18 @@
 <div class="chart-container" id="chart"></div>
 <br>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="form-group col-md-6">
-      <label for="data-set">Change data set</label>
-      <select id="data-set" class="form-control" ng-model="dirCtrl.chartSet" ng-change="dirCtrl.changeSet()">
-        <option ng-repeat="set in dirCtrl.chartSets" value="{{$index}}"> {{set}}</option>
-      </select>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="form-group col-md-6">
+            <label for="data-set">Sata sets</label>
+            <select id="data-set" class="form-control" ng-model="dirCtrl.chartSet" ng-change="dirCtrl.changeSet()">
+                <option ng-repeat="set in dirCtrl.chartSets" value="{{$index}}"> {{set}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="chart-type">Chart types</label>
+            <select id="chart-type" class="form-control" ng-model="dirCtrl.chartType" ng-change="dirCtrl.changeChart()">
+                <option ng-repeat="type in dirCtrl.chartTypes" value="{{$index}}"> {{type}}</option>
+            </select>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-      <label for="chart-type">Change chart type</label>
-      <select id="chart-type" class="form-control" ng-model="dirCtrl.chartType" ng-change="dirCtrl.changeChart()">
-        <option ng-repeat="type in dirCtrl.chartTypes" value="{{$index}}"> {{type}}</option>
-      </select>
-    </div>
-  </div>
 </div>

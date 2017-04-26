@@ -108,7 +108,7 @@
 
                 var makeData = function (pageSize, pageNumber) {
                     var rowCount = pageSize * pageNumber;
-                    var nationality = ['India', 'USA', 'Canada', 'UAE', 'Australia', 'UK', 'Switzerland'];
+                    var nationality = ['Indian (India)', 'American (USA)', 'Canadian (Canada)', 'Emirati (UAE)', 'Australian (Australia)', 'British (UK)', 'Swiss (Switzerland)'];
                     var status = ['Married', 'Single', 'Divorcee'];
                     var experience = ['Novice', 'Ninja' , 'Intermediate'];
                     var gender = ['Male', 'Female', 'Gay', 'Lesbian'];

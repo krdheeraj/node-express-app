@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="form-group col-md-6">
-            <label for="data-set">Sata sets</label>
+            <label for="data-set">Data sets</label>
             <select id="data-set" class="form-control" ng-model="dirCtrl.chartSet" ng-change="dirCtrl.changeSet()">
                 <option ng-repeat="set in dirCtrl.chartSets" value="{{$index}}"> {{set}}</option>
             </select>

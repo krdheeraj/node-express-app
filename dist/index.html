@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="nodeApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>NodeJS App : Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./files/bootstrap.css">
+		<link rel="stylesheet" href="./files/style.css">
+	</head>
+	<body class="data-ng-cloak">
+		<header class="header">
+			<div role="banner" class="navbar navbar-inverse navbar-static-top app-nav">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" data-toggle="collapse" data-target="#app-navbar" aria-controls="app-navbar" aria-expanded="false" class="navbar-toggle collapsed">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="https://shorifali.github.io/node-express-app/dist" class="navbar-brand">Express App</a>
+					</div>
+					<nav id="app-navbar" class="collapse navbar-collapse">
+						<ul class="nav navbar-nav app-menu">
+							<li class="menu-item">
+								<a href="https://shorifali.github.io/node-express-app/dist/chart">Chart</a>
+							</li>
+							<li class="menu-item">
+								<a href="https://shorifali.github.io/node-express-app/dist/table">Table</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main ng-controller="homeController as homeCtrl" class="main container-fluid">
+			<section class="home-content">
+				<div ng-show="homeCtrl.showContent" class="home-wrapper" aria-hidden="false">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<br>
+							<br>
+							<h1 class="text-center">
+								<span>A Traditional Multi-Page Application</span>
+								<br>
+								<br>
+								<span style="color: brown">Using</span>
+								<br>
+								<br>
+								<span>NodeJS, Express, AngularJS, Bootstrap, jQuery, Jade, SASS, and D3</span>
+							</h1>
+							<br>
+							<h1 class="text-center">
+								<a href="https://shorifali.github.io/node-express-app/dist/table" class="link">Table (With Pagination)</a>
+								<br>
+								<br>
+								<a href="https://shorifali.github.io/node-express-app/dist/chart" class="link">Chart (With Multiple Data Sets)</a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="footer-content">
+							<span class="copyright">
+								<span>© 2016&nbsp;</span>
+								<a href="https://github.com/shorifali" target="_bank">Shorif Ali</a>
+								<span>,&nbsp;All rights reserved</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="./files/jquery.min.js"></script>
+		<script type="text/javascript" src="./files/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./files/angular.min.js"></script>
+		<script type="text/javascript" src="./files/angular-animate.min.js"></script>
+		<script type="text/javascript" src="./files/angular-aria.min.js"></script>
+		<script type="text/javascript" src="./files/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="./files/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="./files/angular-touch.min.js"></script>
+		<script type="text/javascript" src="./files/angular-resource.min.js"></script>
+		<script type="text/javascript" src="./files/app.js"></script>
+		<script type="text/javascript" src="./files/home.controller.js"></script>
+	</body>
+</html>

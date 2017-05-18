@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="nodeApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>NodeJS App : Employee Table</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../files/bootstrap.css">
+		<link rel="stylesheet" href="../files/style.css">
+	</head>
+	<body class="data-ng-cloak">
+		<header class="header">
+			<div role="banner" class="navbar navbar-inverse navbar-static-top app-nav">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" data-toggle="collapse" data-target="#app-navbar" aria-controls="app-navbar" aria-expanded="false" class="navbar-toggle collapsed">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="https://shorifali.github.io/node-express-app/dist" class="navbar-brand">Express App</a>
+					</div>
+					<nav id="app-navbar" class="collapse navbar-collapse">
+						<ul class="nav navbar-nav app-menu">
+							<li class="menu-item">
+								<a href="https://shorifali.github.io/node-express-app/dist/chart">Chart</a>
+							</li>
+							<li class="menu-item">
+								<a href="https://shorifali.github.io/node-express-app/dist/table">Table</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main ng-controller="tableController as tableCtrl" class="main container-fluid">
+			<section class="table-content">
+				<h3 class="pull-left">
+					<span class="pull-left">Employee Table</span>
+				</h3>
+				<div class="pull-right select-wrapper clearfix">
+					<select ng-model="tableCtrl.pageSize" ng-change="tableCtrl.changeValue()" class="form-control input-sm selector pull-left ng-pristine ng-untouched ng-valid ng-not-empty" aria-invalid="false">
+						<option value="50">50</option>
+						<option value="100">100</option>
+						<option value="200">200</option>
+						<option value="300">300</option>
+						<option value="400">400</option>
+						<option value="500">500</option>
+					</select>
+					<select ng-model="tableCtrl.pageNumber" ng-change="tableCtrl.changeValue()" class="form-control input-sm selector pull-right ng-pristine ng-untouched ng-valid ng-not-empty" aria-invalid="false">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<div ng-show="tableCtrl.showTable" class="table-wrapper" aria-hidden="false">
+					<node-table class="node-table"></node-table>
+				</div>
+				<script id="popup" type="template">
+					<tr ng-cloak="ng-cloak" class="table-popup">
+						<td colspan="8">
+							<table class="table table-responsive">
+								<tbody class="table-body">
+									<tr class="table-row">
+										<td colspan="7" class="table-col">
+											<div class="wrapper">
+												<span class="popup-label">ID:&nbsp;</span>{{tableCtrl.popupData.id}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Name:&nbsp;</span>{{tableCtrl.popupData.name}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Gender:&nbsp;</span>{{tableCtrl.popupData.gender}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Age:&nbsp;</span>{{tableCtrl.popupData.age}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Status:&nbsp;</span>{{tableCtrl.popupData.status}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Nationality:&nbsp;</span>{{tableCtrl.popupData.nationality}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Profession:&nbsp;</span>{{tableCtrl.popupData.profession}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Experience:&nbsp;</span>{{tableCtrl.popupData.experience}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">Qualification:&nbsp;</span>{{tableCtrl.popupData.qualification}}
+											</div>
+											<div class="wrapper">
+												<span class="popup-label">PIN:&nbsp;</span>{{tableCtrl.popupData.pin}}
+											</div>
+										</td>
+									</tr>
+									<tr class="table-row">
+										<td colspan="7" class="table-col">
+											<div class="btn-group-wrapper">
+												<div class="btn-group">
+													<button title="Edit" class="btn btn-default">Edit</button>
+													<button title="Delete" class="btn btn-default">Delete</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<span ng-click="tableCtrl.closePopup()" class="btn-close pull-right">
+								<i class="glyphicon glyphicon-remove"></i>
+							</span>
+						</td>
+					</tr>
+				</script>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="footer-content">
+							<span class="copyright">
+								<span>© 2016&nbsp;</span>
+								<a href="https://github.com/shorifali" target="_bank">Shorif Ali</a>
+								<span>,&nbsp;All rights reserved</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="../files/jquery.min.js"></script>
+		<script type="text/javascript" src="../files/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../files/angular.min.js"></script>
+		<script type="text/javascript" src="../files/angular-animate.min.js"></script>
+		<script type="text/javascript" src="../files/angular-aria.min.js"></script>
+		<script type="text/javascript" src="../files/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="../files/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="../files/angular-touch.min.js"></script>
+		<script type="text/javascript" src="../files/angular-resource.min.js"></script>
+		<script type="text/javascript" src="../files/d3.min.js"></script>
+		<script type="text/javascript" src="../files/app.js"></script>
+		<script type="text/javascript" src="../files/table.controller.js"></script>
+		<script type="text/javascript" src="../files/table.directive.js"></script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="clearfix">
+            <span class="pull-left">Frequency Chart</span>
+            <select class="pull-left form-control chart-type input-sm" ng-model="dirCtrl.dataCount" ng-change="dirCtrl.changeCount()">
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+            <select class="pull-left form-control chart-type input-sm" ng-model="dirCtrl.chartType" ng-change="dirCtrl.changeChart()">
+                <option value="0">Bar chart</option>
+                <option value="1">Line chart</option>
+                <option value="2">Area chart</option>
+                <option value="3">Scattered chart</option>
+            </select>
+        </h3>
+    </div>
+    <div id="chart" class="col-md-12 chart-container">
+        <svg width="100%" height="500px"></svg>
+    </div>
+</div>
